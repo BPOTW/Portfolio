@@ -6,13 +6,13 @@ import heroBackground from '@/assets/hero-background.jpg';
 export const Hero = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
+      
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
         style={{ backgroundImage: `url(${heroBackground})` }}
       />
       
-      {/* Gradient Overlay */}
+      
       <div className="absolute inset-0 gradient-hero opacity-80" />
       
       <div className="container mx-auto px-6 relative z-10">
