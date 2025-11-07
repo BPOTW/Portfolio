@@ -16,7 +16,9 @@ export const Contact = () => {
     subject: '',
     message: ''
   });
-    const WEB3FORMS_ACCESS_KEY = 'abcf21fc-3b63-4552-8471-5027ed69565c'; // Replace with your Web3Forms access key
+  // Read the Web3Forms access key from Vite environment variables.
+  // Vite exposes env vars prefixed with VITE_ via import.meta.env.
+  const WEB3FORMS_ACCESS_KEY = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
   const contactInfo = [
     {
       icon: Mail,
