@@ -4,25 +4,36 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import { useState } from 'react';
+import { useToast } from '@/components/ui/use-toast';
 
 export const Contact = () => {
+  const [isLoading, setIsLoading] = useState(false);
+  const { toast } = useToast();
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+    const WEB3FORMS_ACCESS_KEY = 'abcf21fc-3b63-4552-8471-5027ed69565c'; // Replace with your Web3Forms access key
   const contactInfo = [
     {
       icon: Mail,
       title: "Email",
-      value: "hello@portfolio.com",
+      value: "codedbyzain@gmail.com",
       link: "mailto:hello@portfolio.com"
     },
     {
       icon: Phone,
       title: "Phone",
-      value: "+1 (555) 123-4567",
-      link: "tel:+15551234567"
+      value: "+92 320 8362 440",
+      link: "tel:+923208362440"
     },
     {
       icon: MapPin,
       title: "Location",
-      value: "San Francisco, CA",
+      value: "Pakistan, Lahore",
       link: "#"
     }
   ];
@@ -106,7 +117,61 @@ export const Contact = () => {
             <Card className="glass p-8">
               <h3 className="text-2xl font-semibold mb-6 text-primary">Send a Message</h3>
               
-              <form className="space-y-6">
+              <form className="space-y-6" onSubmit={async (e) => {
+                e.preventDefault();
+                if (!formData.name || !formData.email || !formData.subject || !formData.message) {
+                  toast({
+                    variant: "destructive",
+                    title: "Error",
+                    description: "Please fill in all fields",
+                  });
+                  return;
+                }
+
+                setIsLoading(true);
+                try {
+                    const response = await fetch('https://api.web3forms.com/submit', {
+                      method: 'POST',
+                      headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                      },
+                      body: JSON.stringify({
+                        access_key: WEB3FORMS_ACCESS_KEY,
+                        name: formData.name,
+                        email: formData.email,
+                        subject: formData.subject,
+                        message: formData.message
+                      })
+                    });
+
+                    const result = await response.json();
+                    if (result.success) {
+                      toast({
+                        title: "Success",
+                        description: "Your message has been sent successfully!",
+                      });
+                    
+                      setFormData({
+                        name: '',
+                        email: '',
+                        subject: '',
+                        message: ''
+                      });
+                    } else {
+                      throw new Error('Failed to send message');
+                    }
+
+                } catch (error) {
+                  toast({
+                    variant: "destructive",
+                    title: "Error",
+                    description: "Failed to send message. Please try again.",
+                  });
+                } finally {
+                  setIsLoading(false);
+                }
+              }}>
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -116,6 +181,9 @@ export const Contact = () => {
                   <Input 
                     placeholder="Your Name" 
                     className="glass border-accent/30"
+                    value={formData.name}
+                    onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
+                    required
                   />
                 </motion.div>
                 
@@ -129,6 +197,9 @@ export const Contact = () => {
                     type="email" 
                     placeholder="Your Email" 
                     className="glass border-accent/30"
+                    value={formData.email}
+                    onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
+                    required
                   />
                 </motion.div>
                 
@@ -141,6 +212,9 @@ export const Contact = () => {
                   <Input 
                     placeholder="Subject" 
                     className="glass border-accent/30"
+                    value={formData.subject}
+                    onChange={(e) => setFormData(prev => ({ ...prev, subject: e.target.value }))}
+                    required
                   />
                 </motion.div>
                 
@@ -154,6 +228,9 @@ export const Contact = () => {
                     placeholder="Your Message" 
                     rows={6}
                     className="glass border-accent/30 resize-none"
+                    value={formData.message}
+                    onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))}
+                    required
                   />
                 </motion.div>
                 
@@ -167,9 +244,16 @@ export const Contact = () => {
                     type="submit" 
                     className="w-full hover-lift hover-glow"
                     size="lg"
+                    disabled={isLoading}
                   >
-                    <Send size={18} className="mr-2" />
-                    Send Message
+                    {isLoading ? (
+                      "Sending..."
+                    ) : (
+                      <>
+                        <Send size={18} className="mr-2" />
+                        Send Message
+                      </>
+                    )}
                   </Button>
                 </motion.div>
               </form>

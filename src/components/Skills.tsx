@@ -4,43 +4,37 @@ import { Code2, Palette, Zap, Globe, Smartphone, Database } from 'lucide-react';
 
 export const Skills = () => {
   const skillCategories = [
-    {
-      title: "Frontend Development",
-      icon: Code2,
-      skills: ["React", "TypeScript", "Next.js", "Tailwind CSS"],
-      color: "text-blue-500"
-    },
-    {
-      title: "Design & UX",
-      icon: Palette,
-      skills: ["UI/UX Design", "Figma", "Adobe Creative Suite", "Prototyping"],
-      color: "text-purple-500"
-    },
-    {
-      title: "3D & Animation",
-      icon: Zap,
-      skills: ["Three.js", "Framer Motion", "WebGL", "CSS Animations"],
-      color: "text-primary"
-    },
-    {
-      title: "Web Technologies",
-      icon: Globe,
-      skills: ["HTML5", "CSS3", "JavaScript", "Web APIs"],
-      color: "text-orange-500"
-    },
-    {
-      title: "Mobile Development",
-      icon: Smartphone,
-      skills: ["React Native", "PWAs", "Responsive Design", "Cross-platform"],
-      color: "text-green-500"
-    },
-    {
-      title: "Backend & Tools",
-      icon: Database,
-      skills: ["Node.js", "API Design", "Git", "CI/CD"],
-      color: "text-red-500"
-    }
-  ];
+  {
+    title: "Modern Frontend",
+    icon: Code2,
+    skills: ["React.js", "Next.js", "Tailwind CSS", "Mobile-First Design"],
+    color: "text-blue-500"
+  },
+  {
+    title: "Backend Development",
+    icon: Database,
+    skills: ["Node.js", "Express.js", "REST APIs", "Authentication/Security"],
+    color: "text-red-500"
+  },
+  {
+    title: "Database & Data Flow",
+    icon: Zap,
+    skills: ["MongoDB (NoSQL)", "Mongoose ORM", "CRUD Operations", "Data Modeling"],
+    color: "text-primary" // Assuming text-primary is a specific color in your Tailwind config
+  },
+  {
+    title: "Web Fundamentals",
+    icon: Globe,
+    skills: ["HTML5", "CSS3", "JavaScript (ES6+)", "Responsive Design"],
+    color: "text-orange-500"
+  },
+  {
+    title: "Tools & Workflow",
+    icon: Smartphone, // Reusing icon for a new category focus
+    skills: ["Git & GitHub", "Vercel/Netlify Deployment", "VS Code", "Debugging"],
+    color: "text-green-500"
+  },
+];
 
   return (
     <section id="skills" className="py-24">

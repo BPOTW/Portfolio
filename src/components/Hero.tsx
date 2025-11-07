@@ -1,15 +1,17 @@
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
-import heroBackground from '@/assets/hero-background.jpg';
+import { ArrowDown, Mail } from 'lucide-react';
+import { FaLinkedin } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
+// import heroBackground from '@/assets/hero-background.jpg';
 
 export const Hero = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative min-h-screen  flex items-center justify-center overflow-hidden">
       
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
-        style={{ backgroundImage: `url(${heroBackground})` }}
+        // style={{ backgroundImage: `url(${heroBackground})` }}
       />
       
       
@@ -23,25 +25,24 @@ export const Hero = () => {
             transition={{ duration: 0.8 }}
           >
             <motion.h1 
-              className="text-6xl md:text-8xl font-bold mb-6 text-gradient"
+              className="text-6xl md:text-8xl font-bold mb-6 mt-10 text-[#b2ffdc]"
               initial={{ scale: 0.8 }}
               animate={{ scale: 1 }}
               transition={{ delay: 0.2, duration: 0.6 }}
             >
-              Creative
+              I'm Muhammad
               <br />
-              Portfolio
+              Zain Ali
             </motion.h1>
           </motion.div>
 
           <motion.p 
-            className="text-xl md:text-2xl mb-8 text-muted-foreground max-w-2xl mx-auto"
+            className="text-l md:text-2xl font-medium text-[#1a6151] mb-8 max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
           >
-            Crafting beautiful digital experiences with modern design, 
-            smooth animations, and innovative 3D elements.
+            Full-Stack Developer | Building Fast, Modern Web Apps with the MERN Stack.
           </motion.p>
 
           <motion.div 
@@ -65,8 +66,8 @@ export const Hero = () => {
             transition={{ delay: 0.8, duration: 0.6 }}
           >
             {[
-              { Icon: Github, href: "#", label: "GitHub" },
-              { Icon: Linkedin, href: "#", label: "LinkedIn" },
+              { Icon: FaGithub, href: "https://github.com/BPOTW", label: "GitHub" },
+              { Icon: FaLinkedin, href: "https://www.linkedin.com/in/zain-ali-web/", target:"", label: "LinkedIn" },
               { Icon: Mail, href: "#contact", label: "Email" }
             ].map(({ Icon, href, label }, index) => (
               <motion.a

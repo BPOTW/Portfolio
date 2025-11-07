@@ -10,7 +10,7 @@ const Index = () => {
   return (
     <main className="relative">
       {/* Floating 3D Elements Background */}
-      <FloatingElements />
+      {/* <FloatingElements /> */}
       
       {/* Navigation */}
       <Navigation />
@@ -26,7 +26,7 @@ const Index = () => {
       <footer className="py-8 bg-card border-t border-border">
         <div className="container mx-auto px-6 text-center">
           <p className="text-muted-foreground">
-            © 2024 Creative Portfolio. Crafted with passion and innovation.
+            © 2025 Creative Portfolio. Crafted with passion and innovation.
           </p>
         </div>
       </footer>

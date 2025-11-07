@@ -4,11 +4,11 @@ import { Card } from '@/components/ui/card';
 export const About = () => {
   const skills = [
     "Frontend Development",
-    "UI/UX Design", 
-    "3D Graphics",
-    "Animation",
+    "Backend Development",
+    "Database Management",
+    "RESTful APIs",
+    "Responsive Designs",
     "React & Next.js",
-    "TypeScript"
   ];
 
   return (
@@ -23,8 +23,7 @@ export const About = () => {
         >
           <h2 className="text-5xl font-bold mb-6 text-gradient">About Me</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            I'm a passionate developer and designer who loves creating immersive digital experiences 
-            that combine beautiful aesthetics with cutting-edge technology.
+            I am a dedicated developer specializing in building fast, modern web applications. My expertise lies in the full MERN stack (MongoDB, Express, React/Next.js, Node.js), ensuring every project is delivered with clean, high-performance, and mobile-responsive code. I am committed to turning ideas into reliable, future-proof digital solutions.
           </p>
         </motion.div>
 
@@ -38,9 +37,7 @@ export const About = () => {
             <Card className="glass p-8 hover-lift">
               <h3 className="text-2xl font-semibold mb-4 text-primary">My Journey</h3>
               <p className="text-muted-foreground mb-6">
-                With over 5 years of experience in web development and design, I specialize in 
-                creating responsive, accessible, and visually stunning applications. My passion 
-                for innovation drives me to constantly explore new technologies and design patterns.
+                I recently completed intensive training, transforming my passion into the specialized skill of a Full-Stack Developer. My focus is on building modern, high-performance web applications using the powerful MERN stack and Next.js. Driven by fresh knowledge and a commitment to clean code, I quickly turn concepts into reliable, mobile-responsive digital solutions, ready to tackle projects from dynamic landing pages to custom applications.
               </p>
               <p className="text-muted-foreground">
                 I believe in the power of good design to solve complex problems and create 
