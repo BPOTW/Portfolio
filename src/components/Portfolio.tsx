@@ -26,7 +26,7 @@ export const Portfolio = () => {
     description: "A real-time room-based communication platform with smooth UI, customizable settings, and instant interactions powered by Socket.IO. Built with modular architecture and persistent chat storage for a seamless, scalable experience.",
     image: chat,
     tags: ["Next.js", "React", "Tailwind CSS", "Socket.io", "Zustand"],
-    liveUrl: "https://hhcdropshipping.vercel.app/",
+    liveUrl: "https://whisper-pi-three.vercel.app/chat",
     githubUrl: "/"
   },
   {
