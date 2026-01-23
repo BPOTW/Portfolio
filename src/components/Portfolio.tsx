@@ -8,9 +8,27 @@ import recipe from '@/assets/recipe.png';
 import weather from '@/assets/weather.jpeg';
 import whatsapp from '@/assets/whatsapp.png';
 import tinyurl from '@/assets/tinyurl.png';
+import ofa from '@/assets/ofa.jpeg';
+import chat from '@/assets/chat.jpeg';
 
 export const Portfolio = () => {
   const projects = [
+    {
+    title: "OFA Tools (One For All Tools)",
+    description: "An online toolkit with 187 powerful tools, all in one place. No more switching tabs, Googling random utilities, or using slow websites — OFA Tools brings everything together with a clean UI and super-fast performance.",
+    image: ofa,
+    tags: ["Next.js", "React", "Tailwind CSS", "CSS"],
+    liveUrl: "https://mainwebapp.vercel.app/",
+    githubUrl: "/"
+  },
+  {
+    title: "Whisper Chat",
+    description: "A real-time room-based communication platform with smooth UI, customizable settings, and instant interactions powered by Socket.IO. Built with modular architecture and persistent chat storage for a seamless, scalable experience.",
+    image: chat,
+    tags: ["Next.js", "React", "Tailwind CSS", "Socket.io", "Zustand"],
+    liveUrl: "https://hhcdropshipping.vercel.app/",
+    githubUrl: "/"
+  },
   {
     title: "Dynamic E-Commerce Landing Page",
     description: "A fast, fully responsive landing page for an e-commerce brand built with a modern framework for high performance and lead conversion.",
